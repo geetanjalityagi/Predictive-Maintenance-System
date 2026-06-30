@@ -1,9 +1,16 @@
 from fastapi import FastAPI
 
+from app.api.routes import router
+
+
 app = FastAPI(
-    title= 'Predictive Maintenance API'
+    title="Predictive Maintenance API",
+    version="1.0.0"
 )
 
+app.include_router(router)
+
+
 @app.get("/health")
-def health_status():
-    return {"status : ok"}
+def health_check():
+    return {"status": "ok"}
