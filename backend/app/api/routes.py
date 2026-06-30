@@ -11,3 +11,5 @@ router = APIRouter()
 def predict(request: PredictionRequest):
     return predict_failure(request)
 
+
+
