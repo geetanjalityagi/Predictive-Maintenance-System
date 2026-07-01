@@ -10,8 +10,9 @@ class PredictionRequest(BaseModel):
     tool_wear_min : Annotated[float, Field(..., gt=0, description='Enter tool wera [min] : ')]
 
 class PredictionResponse(BaseModel):
-    failure : bool
-    failure_type : str
-    predicted_class : int
-    confidence : float
-    probabilities : Dict[str, float]
+    machine_status: str
+    failure_type: str
+    confidence: float
+    risk_level: str
+    recommendation: str
+    class_probabilities: Dict[str, float]
